@@ -1,0 +1,2 @@
+add_executable(concurrent_queue_main libalgos/concurrent_queue_main.cpp)
+target_link_libraries(concurrent_queue_main libexample)

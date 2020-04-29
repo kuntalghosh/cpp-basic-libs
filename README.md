@@ -2,6 +2,10 @@
 
 This repository contains the implementations of basic data structures and algorithms using c++. To build this project, you need CMake installed in your system. You can download it for free from here <http://www.cmake.org/>.
 
+Algorithms:
+
+* Concurrent queues
+
 It is always recommended to build the project in a different directory from the source. Followings are the instructions to build the project.
 
     mkdir build       # Create a directory to hold the build output.

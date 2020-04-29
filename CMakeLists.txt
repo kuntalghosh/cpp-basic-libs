@@ -46,6 +46,11 @@ target_include_directories(libexample
   ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
+OPTION(WITH_EXAMPLES "build with examples" ON)
+if (WITH_EXAMPLES)
+	add_subdirectory(examples)
+endif()
+
 OPTION(WITH_TESTS "build with tests" ON)
 if (WITH_TESTS)
 	enable_testing()

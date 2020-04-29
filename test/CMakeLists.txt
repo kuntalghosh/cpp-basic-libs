@@ -6,7 +6,13 @@ target_link_libraries(regression gtest)
 
 # Add tests here
 
-# 1. Test for libexample
-add_executable(libexample_test libexample_test.cpp)
-target_link_libraries(libexample_test libexample regression gtest)
-add_test(NAME libexample_test COMMAND libexample_test)
+SET(TESTS
+	libexample_test.cpp
+	libalgos/concurrent_queue_test.cpp)
+
+foreach(testfile ${TESTS})
+	get_filename_component(test ${testfile} NAME_WE)
+	add_executable(${test} ${testfile})
+	target_link_libraries(${test} libexample regression gtest)
+	add_test(NAME ${test} COMMAND ${test})
+endforeach(testfile ${TESTS})
